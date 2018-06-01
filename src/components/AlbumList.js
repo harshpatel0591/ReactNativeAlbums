@@ -12,7 +12,6 @@ componentWillMount() {
 
 
   // Class based component is used to get data dynamically and to render it.
-    render
   // Class based component is used to get data dynamically and to render it.
     render() {   // render is used specifically for class based components
       return (
