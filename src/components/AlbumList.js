@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 // Component needs to be imported separately because we need React as a whole
 import { Text, View } from 'react-native';
 import axios from 'axios';
+import AlbumDetail from './AlbumDetail';
 
 
 class AlbumList extends Component {
@@ -17,13 +18,20 @@ componentWillMount() {
     // here above we are setting the new state for the state property
 }
 
+returnAlbums() {
+  return this.state.albums.map(album =>
+      <AlbumDetail key={album.title} album={album} />
+      // key is used by react to uniquely identify each element
+    );
+}
+
 
   // Class based component is used to get data dynamically and to render it.
   // Class based component is used to get data dynamically and to render it.
     render() {   // render is used specifically for class based components
       return (
           <View>
-            <Text>Album List</Text>
+            {this.returnAlbums()}
           </View>
       );
     }
